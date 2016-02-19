@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  *
- * check given string is possible to make as palindrome
+ * check given string is possible to make as palindrome,if possible make it into palindrome
  */
 public class Palindrome {
 
