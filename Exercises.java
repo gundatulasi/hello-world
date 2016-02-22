@@ -1,7 +1,6 @@
 package excerises;
 
-import edu.harvard.med.open.Command;
-import edu.harvard.med.open.Interval;
+
 import java.util.Collection;
 import java.util.Set;
 
