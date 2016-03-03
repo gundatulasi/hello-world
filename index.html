@@ -6,41 +6,38 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script>            
-            var String = " ";
-            function onClick() {
-   
-                var totalWords = document.getElementById('inputText').value;
-                var totalWordCount = WordCount(totalWords);
-                
-                document.getElementById('countText').innerHTML = totalWordCount
-               }
-
-            function WordCount(str) {
-                var count = 0;
-                words = str.split(" ");
-                for (i = 0; i < words.length; i++) {
-                    
-                    if (words[i] != "")
-                        count += 1;
-                }
-                return count;
-            }
-
-
-
-        </script>
+        <title>Email Validation</title>
     </head>
     <body>
-        <textarea id="inputText" >
-        
-        </textarea>
-        <br>
-        <input onclick="onClick()" type ="button" value ="count">
-        <div id="showCount"> Count of words is : <span id="countText">0</span> </div>
-
+        <h1>Email Validation</h1>
+        <script type ="text/javascript">
+            function validate(form_id,email){
+                //var reg = /^{[A-Za-z0-9_\-\.]}{1,}\@([A-Za-z0-9_\-\.]){1,}\.([A-Za-z]{2,4})$/;
+                
+                var reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                
+                var address1 = document.forms[form_id].elements[email].value;
+              /*  var address2 = document.email_form.email.value */
+              if(!reg.test(address1)){
+                  
+                  alert('Invalid email address please enter a valid one. ');
+                  document.forms[form_id].elements[email].focus();
+                  return false;
+                  
+              }
+              else{
+                  
+                  alert('success');
+              }
+             
+                
+            }
+        </script>
+        <form id = "email_form" method = "get" action = "submit_successful.html" onsubmit=
+              "javascript: return validate('email_form','email');">
+            <p>enter Email address here</p>
+            <input type  ="text" id="email" name="email" />
+            <input type ="submit" value="submit" />
+        </form>
     </body>
 </html>
