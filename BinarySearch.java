@@ -13,7 +13,7 @@ public class BinarySearch {
         int[] arr1 = {4,99,196,295,255};
         int index = binarySearch(arr1,0,arr1.length,1);
         System.out.println("Search element Found at "+index+" index");
-        
+        System.out.println("");
     }
      public static int binarySearch(int[] sortedArray, int start, int end, int key) {
          
